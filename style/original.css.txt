@@ -1,0 +1,107 @@
+body {
+    background-color: #18151F;
+    margin-top: 1%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+#general {
+    background-color: #292536;
+    border-radius: 5px;
+    margin: 30px auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    padding: 2%;
+    justify-items: center;
+}
+
+h1 {
+    background-color: #292536;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    font-size: 50px;
+    color: #C20000;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.pelicula {
+    position: relative;
+    width: 300px;
+    height: auto;
+    cursor: pointer;
+}
+
+.imagen {
+    position: relative;
+    z-index: 1;
+}
+
+.pelis {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s, opacity 0.3s;
+    display: block;
+}
+
+.info-pelicula {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box;
+    z-index: 2;
+}
+
+.titulo-pelicula {
+    color: #C20000;
+    font-size: 22px;
+    margin-bottom: 10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.descripcion-pelicula {
+    font-size: 14px;
+    line-height: 1.4;
+    margin: 0;
+}
+
+.pelicula:hover .info-pelicula {
+    display: flex;
+}
+
+.pelicula:hover .pelis {
+    transform: scale(1.05);
+    opacity: 0.2;
+}
+
+@media (max-width: 1000px) {
+    #general {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+
+    .pelis img {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    #general {
+        grid-template-columns: repeat(auto-fit, minmax(2px, 1fr));
+    }
+
+    .pelis img {
+        width: 100%;
+    }
+}
